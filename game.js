@@ -18,8 +18,8 @@ const PLAYER_WIDTH = 32;
 const PLAYER_HEIGHT = 32;
 const MOVEMENT_SPEED = 5;
 const JUMP_FORCE = -15;
-const baseWidth = 1280;
-const baseHeight = 632;
+const baseWidth = 1366;
+const baseHeight = 633;
 const PORTAL_SCALE = 3; // 3x scale factor for portal
 const PORTAL_FRAME_COUNT = 6;
 const PORTAL_ANIM_DELAY = 100;
@@ -43,8 +43,8 @@ const sounds = {
 let cameraX = 0;
 
 function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = 1366;
+    canvas.height = 633;
 
     scaleX = canvas.width / baseWidth;
     scaleY = canvas.height / baseHeight;
@@ -244,16 +244,16 @@ function addPortal(x, y) {
 }
 
 
-addTrap(0, 'SPIKE', 750, 480);   
-addTrap(0, 'SPIKE', 950, 380);   
-addTrap(0, 'SPIKE', 1150, 440);  
-addTrap(0, 'SPIKE', 1350, 440);  
-addTrap(0, 'SPIKE', 1550, 450);  
-addTrap(0, 'SPIKE', 1750, 470);  
-addTrap(0, 'SPIKE', 1950, 460);  
-addTrap(0, 'SPIKE', 2085, 480);  
-addTrap(0, 'SPIKE', 2350, 480);  
-addTrap(0, 'SPIKE', 2350, 250);  
+addTrap(0, 'SPIKE', 750, 481);   
+addTrap(0, 'SPIKE', 950, 381);   
+addTrap(0, 'SPIKE', 1150, 441);  
+addTrap(0, 'SPIKE', 1350, 441);  
+addTrap(0, 'SPIKE', 1550, 451);  
+addTrap(0, 'SPIKE', 1750, 471);  
+addTrap(0, 'SPIKE', 1950, 461);  
+addTrap(0, 'SPIKE', 2085, 481);  
+addTrap(0, 'SPIKE', 2350, 481);  
+addTrap(0, 'SPIKE', 2350, 251);  
 
 addPillarTrap(0, 2900, 1, 2.5, 0.7, 300);
 addPillarTrap(0, 2975, 1, 2.3, 0.5, 320);
@@ -266,69 +266,27 @@ addPillarTrap(0, 3425, 1, 1.9, 0.5, 550);
 addPillarTrap(0, 3500, 1, 2.0, 0.7, 600);
 addPillarTrap(0, 3575, 1, 1.8, 0.5, 580);
 
-// --- Obstacle Course from x = 4000 ---
-
-// 1. Floating Solid Block Platform to begin the challenge.
-//    (Solid block: 32x16 scaled by 2 gives 64×32)
-addSolidBlock(0, 4050, 440); 
-// This block is at x=4050, y=440 so it sits well above the ground (ground is at y≈536).
-
-// 2. A Spike Trap to force precision in your jump.
-//    (Spike trap: 43x43 scaled by 1.8 gives nearly 78×78)
-addTrap(0, 'SPIKE', 4150, 400); 
-
-// 3. A floating Slime Block to bounce the player.
-//    (Slime block: 32x16 scaled by 2 gives 64×32; bounce velocity is –25)
-addSlimeBlock(0, 4200, 480, -25); 
-
-// 4. Another Spike Trap placed so that if the player isn’t careful after bouncing, they’ll hit it.
-//    Positioned slightly offset vertically from the landing path.
-addTrap(0, 'SPIKE', 4280, 440);
-
-// 5. A Solid Block Platform to land on after the bounce.
-//    (This one is placed lower so the player must control the bounce precisely.)
-addSolidBlock(0, 4350, 360);
+addSolidBlock(0, 4050, 441);
+addTrap(0, 'SPIKE', 4150, 401);
+addSlimeBlock(0, 4200, 481, -25);
+addTrap(0, 'SPIKE', 4280, 441);
+addSolidBlock(0, 4350, 361);
 addPillarTrap(0, 4350, 1, 1.5, 0.5, 300);
-addTrap(0, 'SPIKE', 4350, 0);  
-
-
-
-// 6. A pair of Pillar Traps to add timing pressure.
-//    (Pillar: 25x64 scaled by 3 gives 75×192; they start at y=0 and descend to near ground level)
+addTrap(0, 'SPIKE', 4350, 1);
 addPillarTrap(0, 4450, 1, 0.75, 0.3, 400);
 addPillarTrap(0, 4550, 1, 0.3, 0.6, 500);
-
-// 7. A floating Solid Block Platform after the pillars to provide a safe zone.
-//    (Again, a 64×32 block floating above ground.)
-addSolidBlock(0, 4650, 420);
-
-// 8. Another Spike Trap to challenge the landing.
-//    Positioned so that its vertical range (y≈390 to 468) does not interfere with the platform.
-addTrap(0, 'SPIKE', 4750, 390);
-
-// 9. A second Slime Block to help launch the player further.
-//    Positioned so that a successful bounce will set up the next jump.
-addSlimeBlock(0, 4800, 460, -25);
-
-// 10. A final floating Solid Block Platform as a safe landing area.
-//     (Placed low enough at y=350 to complete the jump challenge.)
-addSolidBlock(0, 4950, 350);
-addTrap(0, 'SPIKE', 5000, 300);
-
-
-// --- (Optional Extension) ---
-// Extend the course further if you want more challenges:
-
-// 11. Another Spike Trap to keep the pressure on.
-addTrap(0, 'SPIKE', 5050, 400);
-
-// 12. One more Slime Block for an extra bounce.
-addSlimeBlock(0, 5100, 480, -25);
-
-// 13. And a final Solid Block as the concluding landing platform.
-addSolidBlock(0, 5250, 360);
-addSolidBlock(0, 5314, 360);
+addSolidBlock(0, 4650, 421);
+addTrap(0, 'SPIKE', 4750, 391);
+addSlimeBlock(0, 4800, 461, -25);
+addSolidBlock(0, 4950, 351);
+addTrap(0, 'SPIKE', 5000, 301);
+addTrap(0, 'SPIKE', 5050, 401);
+addSlimeBlock(0, 5100, 481, -25);
+addSolidBlock(0, 5250, 361);
+addSolidBlock(0, 5314, 361);
 addPortal(5370, 280);
+
+
 
 const video = document.getElementById('birthdayVideo');
 video.src = 'assets/birthday_video.mp4';
@@ -485,7 +443,7 @@ function updateAnimation() {
 function initPlayerPosition() {
     const groundY = canvas.height - TILE_SIZE;
     player.y = groundY - (player.hitboxHeight * player.scale) - player.hitboxOffsetY;
-    player.worldX = 0;
+    player.worldX = 4050;
     player.x = player.worldX;
     cameraX = 0;
 }
