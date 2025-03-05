@@ -485,7 +485,7 @@ function updateAnimation() {
 function initPlayerPosition() {
     const groundY = canvas.height - TILE_SIZE;
     player.y = groundY - (player.hitboxHeight * player.scale) - player.hitboxOffsetY;
-    player.worldX = 5000;
+    player.worldX = 0;
     player.x = player.worldX;
     cameraX = 0;
 }
