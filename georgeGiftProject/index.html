@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/fonts/font.css">
+    <style>
+        * {
+            touch-action: manipulation;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <audio id="checkpointSound" src="assets/checkpoint.mp3"></audio>
+    <audio id="jumpSound" src="assets/jump.mp3"></audio>
+    <audio id="bgSound" src="assets/bgSound.mp3" loop></audio>
+    <audio id="deathSound" src="assets/sounds/death.mp3"></audio>
+    <audio id="damageSound" src="assets/sounds/damage.mp3"></audio>
+    <audio id="slimeJumpSound" src="assets/sounds/slime_jump.mp3"></audio>
+
+    <div id="credits">
+        <div class="credit-container">
+          <div id="gameCredit" class="credit-text">Game made by Aaron</div>
+          <div id="videoCredit" class="credit-text">Video made by Adon</div>
+        </div>
+      </div>
+    
+    <!-- Video element added directly to HTML -->
+    <video id="birthdayVideo" style="display: none; visibility: hidden;">
+        <source src="birthday_video.mp4" type="video/mp4">
+        <source src="birthday_video.webm" type="video/webm">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div id="overlay"></div>
+    <canvas id="gameCanvas"></canvas>
+    
+    <script src="game.js"></script>
+</body>
+</html>
